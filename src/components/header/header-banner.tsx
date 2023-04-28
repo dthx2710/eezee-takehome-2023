@@ -12,7 +12,9 @@ const HeaderBanner = () => {
       <div className="min-w-0 flex-1 py-2 px-8 flex flex-col max-w-screen-2xl mx-auto">
         <div className="flex flex-row">
           <div>
-            <Image src={Logo} alt="Eezee" className={`my-4 ${styles.logo}`}/>
+            <Link href="/">
+              <Image src={Logo} alt="Eezee" className={`my-4 ${styles.logo}`} />
+            </Link>
           </div>
           <div className="flex-1"></div>
           <div>
@@ -20,7 +22,9 @@ const HeaderBanner = () => {
           </div>
         </div>
         <div>
-          <Link href="/brands" className="link">View All Brands</Link>
+          <Link href="/brands" className="link">
+            View All Brands
+          </Link>
         </div>
       </div>
     </div>
