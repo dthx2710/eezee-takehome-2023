@@ -7,22 +7,6 @@ type ProductProps = {
   uniqueTitle?: string | string[];
 };
 
-// type Product = {
-//     id: string;
-//     images: string[];
-//     title: string;
-//     uniqTitle: string;
-//     lowPrice?: number;
-//     lowPricePretty?: string;
-//     currencySymbol?: string;
-//     descriptionHtml?: string;
-//     metadata?: {
-//         brandImage?: string;
-//         brand: string;
-//         model: string;
-//     }
-//   };
-
 const Product = ({ uniqueTitle }: ProductProps) => {
   const product = productData.find(
     (product) => product.uniqTitle === uniqueTitle

@@ -1,0 +1,31 @@
+.contactbar {
+  background-color: #CCC;
+  width: 100%;
+}
+
+.country {
+  height: 1.2em;
+  width: auto;
+  display: inline;
+  margin-right: 8px;
+}
+
+.logo {
+  height: 3em;
+  width: auto;
+}
+
+.headerbanner {
+  background-color: #FFF;
+}
+
+.cardcounter {
+  color: #FFF;
+  font-weight: bold;
+}
+
+.headerbar {
+  border-bottom: 1px;
+  border-color: #C9C9C9;
+  border-style: solid;
+}

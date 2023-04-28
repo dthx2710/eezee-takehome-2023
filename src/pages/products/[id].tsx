@@ -1,13 +1,16 @@
+import Layout from "@/components/layout/layout";
 import Product from "@/components/product/product";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import React from "react";
 
 const ProductPage = () => {
-    const router = useRouter();
+  const router = useRouter();
   const { id } = router.query;
   return (
     <>
-      <Product uniqueTitle={id} />
+      <Layout>
+        <Product uniqueTitle={id} />
+      </Layout>
     </>
   );
 };

@@ -19,7 +19,9 @@ const ProductAdd = ({ price }: ProductAddProps) => {
       .find((row) => row.startsWith("cartCount"))
       ?.split("=")[1];
     if (cartCount) {
-      document.cookie = `cartCount=${parseInt(cartCount) + quantity}; path=/; max-age=86400`;
+      document.cookie = `cartCount=${
+        parseInt(cartCount) + quantity
+      }; path=/; max-age=86400`;
     } else {
       document.cookie = `cartCount=${quantity}; path=/; max-age=86400`;
     }

@@ -10,7 +10,9 @@ const Brands = () => {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
   // array of brands that start with each alphabet
   const brands = alphabet.map((letter) =>
-    sortedBrands.filter((brand) => brand.name.toLowerCase().startsWith(letter.toLowerCase()))
+    sortedBrands.filter((brand) =>
+      brand.name.toLowerCase().startsWith(letter.toLowerCase())
+    )
   );
 
   return (

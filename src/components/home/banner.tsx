@@ -7,7 +7,7 @@ import banner from 'public/banner.webp';
 
 const Banner = () => {
   return (
-    <Image src={banner} alt="banner"/>
+    <Image src={banner} alt="banner" className="m-auto mt-4"/>
   )
 }
 

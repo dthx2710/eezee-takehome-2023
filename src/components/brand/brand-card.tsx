@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import Card from "../card/card";
 
 type BrandCardProps = {
   id: string;
@@ -11,12 +11,10 @@ type BrandCardProps = {
 
 const BrandCard = ({ id, name, productCount, image }: BrandCardProps) => {
   return (
-    <>
-      <div className="flex">
-        {image && <Image src={image} alt={name} width={200} height={200} />}
-        {name}
-      </div>
-    </>
+    <Card image={image} altText={name}>
+      <span className="font-bold text-center">{name}</span>
+      <span className="text-xs text-center text-slate-600">{productCount} Product{(productCount && productCount > 1) ? "s" : ""}</span>
+    </Card>
   );
 };
 

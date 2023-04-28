@@ -8,7 +8,7 @@ const Products = () => {
   // states
   const [sort, setSort] = useState(0);
   const [data, setData] = useState(productData);
-  
+
   // useEffect to sort data when sort state changes
   useEffect(() => {
     if (sort === 0) {
@@ -27,16 +27,18 @@ const Products = () => {
     <Layout>
       <p>Page 1 of about 10 results</p>
       <ProductSort sort={sort} setSort={setSort} />
-      {data.map((product) => (
-        <ProductCard
-          key={product.id}
-          id={product.id}
-          title={product.title}
-          image={product.images[0].url}
-          uniqueTitle={product.uniqTitle}
-          lowPricePretty={product.lowPricePretty}
-        />
-      ))}
+      <div className="grid grid-cols-6 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {data.map((product) => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            title={product.title}
+            image={product.images[0].url}
+            uniqueTitle={product.uniqTitle}
+            lowPricePretty={product.lowPricePretty}
+          />
+        ))}
+      </div>
     </Layout>
   );
 };
