@@ -1,6 +1,16 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import { useState, createContext } from "react";
+
+export const CartContext = createContext({cart: 0, setCart: (cart: number) => {}});
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const [cart, setCart] = useState(0);
+  return (
+    <>
+      <CartContext.Provider value={{cart, setCart}}>
+        <Component {...pageProps} />
+      </CartContext.Provider>
+    </>
+  );
 }

@@ -1,30 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "@/pages/_app";
 
 type ProductAddProps = {
   price?: string;
 };
 
 const ProductAdd = ({ price }: ProductAddProps) => {
+  // cart context
+  const { cart, setCart } = useContext(CartContext);
+
   // quantity state
   const [quantity, setQuantity] = useState(1);
 
   const addToCart = () => {
-    // add quantity to cart
-    window.alert(`Added ${quantity} item(s) to cart`);
     // reset quantity to 1
     setQuantity(1);
-    //set simple cookie for cart quantity persistence
-    const cartCount = document.cookie
-      .split("; ")
-      .find((row) => row.startsWith("cartCount"))
-      ?.split("=")[1];
-    if (cartCount) {
-      document.cookie = `cartCount=${
-        parseInt(cartCount) + quantity
-      }; path=/; max-age=86400`;
-    } else {
-      document.cookie = `cartCount=${quantity}; path=/; max-age=86400`;
-    }
+    // set cart context
+    setCart(cart + quantity);
+    // add quantity to cart
+    window.alert(`Added ${quantity} item(s) to cart`);
   };
 
   const manualQuantity = () => {
