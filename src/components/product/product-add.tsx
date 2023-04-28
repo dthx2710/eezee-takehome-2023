@@ -37,41 +37,43 @@ const ProductAdd = ({ price }: ProductAddProps) => {
 
   return (
     <>
-      <div>{price}</div>
-      <div className="flex">
-        <div className="flex">Quantity</div>
-        <div className="flex">
-          <button
-            className="bg-blue-100 hover:bg-blue-300 text-blue-800 py-2 px-4 rounded-l"
-            onClick={() =>
-              quantity > 1 ? setQuantity(quantity - 1) : setQuantity(1)
-            }
-          >
-            -
-          </button>
-          <button
-            className="bg-blue-100 hover:bg-blue-300 text-black py-2 px-4"
-            onClick={manualQuantity}
-          >
-            {quantity}
-          </button>
-          <button
-            className="bg-blue-100 hover:bg-blue-300 text-blue-800 py-2 px-4 rounded-r"
-            onClick={() => setQuantity(quantity + 1)}
-          >
-            +
-          </button>
+      <div className="flex flex-col justify-center bg-white px-10 py-5 rounded-xl">
+        <div className="text-2xl font-bold text-blue-600 mb-3 text-center">{price}</div>
+        <hr />
+        <div className="flex my-3 items-center">
+          <div className="font-semibold">Quantity:</div>
+          <div className="ml-5">
+            <button
+              className="bg-white hover:bg-blue-200 text-blue-800 py-2 px-4 rounded-l border"
+              onClick={() =>
+                quantity > 1 ? setQuantity(quantity - 1) : setQuantity(1)
+              }
+            >
+              -
+            </button>
+            <button
+              className="bg-white hover:bg-blue-200 text-black py-2 px-4 border"
+              onClick={manualQuantity}
+            >
+              {quantity}
+            </button>
+            <button
+              className="bg-white hover:bg-blue-200 text-blue-800 py-2 px-4 rounded-r border"
+              onClick={() => setQuantity(quantity + 1)}
+            >
+              +
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="flex justify-between">
-        <div className="flex">
+        <div className="flex flex-col justify-between">
           <button
-            className="bg-blue-800 hover:bg-blue-900 text-white py-2 px-4 rounded-l"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             onClick={addToCart}
           >
             Add to Cart
           </button>
-          <button className="bg-blue-100 hover:bg-blue-300 text-blue-800 py-2 px-4 rounded-r">
+          <div className="mb-1"></div>
+          <button className="bg-transparent hover:bg-orange-700 text-orange-700 font-semibold hover:text-white py-2 px-4 border border-orange-700 hover:border-transparent rounded">
             Add to Favourites
           </button>
         </div>
