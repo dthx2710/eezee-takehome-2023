@@ -20,12 +20,13 @@ type ProductCardProps = {
   currencySymbol?: string;
 };
 
-const ProductCard = ({ id, title, image, uniqueTitle }: ProductCardProps) => {
+const ProductCard = ({ id, title, image, uniqueTitle, lowPricePretty }: ProductCardProps) => {
   return (
     <>
       <div className="flex">
         {image && <Image src={image} alt={title} width={200} height={200} />}
         <Link href={`/products/${uniqueTitle}`}>{title}</Link>
+        <p>{lowPricePretty}</p>
       </div>
     </>
   );
