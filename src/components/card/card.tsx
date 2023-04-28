@@ -13,15 +13,19 @@ type CardProps = {
   altText?: string;
   children: React.ReactNode;
   className?: string;
-  tags?: Tag;
+  tags?: Tag[];
 };
 
 const Card = ({ image, altText, children, className, tags }: CardProps) => {
-  let tagDivs = [];
+  let tagDivs = [] as JSX.Element[];
 
   if (tags) {
     tagDivs = tags.map((tagItem, index) => (
-      <div className={`absolute text-xs p-0.5 font-bold left-0 ${tagItem.color}`} style={{ bottom: `${index * 1.25}rem` }} key={index}>
+      <div
+        className={`absolute text-xs p-0.5 font-bold left-0 ${tagItem.color}`}
+        style={{ bottom: `${index * 1.25}rem` }}
+        key={index}
+      >
         {tagItem.name}
       </div>
     ));
@@ -33,7 +37,15 @@ const Card = ({ image, altText, children, className, tags }: CardProps) => {
         {image && (
           <div className="w-full h-40 min-h-0 relative">
             <div className="w-full h-32 min-h-0 relative">
-              <Image src={image} alt={altText} height={200} width={200} className="mx-auto h-full object-contain object-center" />
+              {image && altText && (
+                <Image
+                  src={image}
+                  alt={altText}
+                  height={200}
+                  width={200}
+                  className="mx-auto h-full object-contain object-center"
+                />
+              )}
             </div>
             {tagDivs}
           </div>
@@ -44,4 +56,5 @@ const Card = ({ image, altText, children, className, tags }: CardProps) => {
   );
 };
 
-export { Card as default, Tag };
+export { Card as default };  export type { Tag };
+
