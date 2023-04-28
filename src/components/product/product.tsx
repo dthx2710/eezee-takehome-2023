@@ -25,6 +25,28 @@ const Product = ({ uniqueTitle }: ProductProps) => {
                     {product.title}
                   </h1>
                 </div>
+                <div className="flex flex-row my-2">
+                  <div className="flex-2 mr-5">
+                    <Image
+                      src={product.metadata.brandImage}
+                      alt={product.metadata.brand}
+                      width={100}
+                      height={100}
+                    ></Image>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-col">
+                      <div className="flex">
+                        <h2 className="font-light mr-2">Model:</h2>
+                        <p className="link">{product.metadata.model}</p>
+                      </div>
+                      <div className="flex">
+                        <h2 className="font-light mr-2">Brand:</h2>
+                        <p className="link">{product.metadata.brand}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <hr />
                 <Image
                   src={product.images[0].url}
