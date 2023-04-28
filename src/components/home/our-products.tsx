@@ -23,6 +23,8 @@ const OurProducts = () => {
             moq={product.moq > 1 ? product.moq : undefined}
             bulkDiscountFlag={product.bulkDiscountFlag}
             vipPriceFlag={product.vipPriceFlag}
+            lowPricePretty={product.lowPricePretty || undefined}
+            highPricePretty={product.highPricePretty || undefined}
           />
         ))}
       </div>

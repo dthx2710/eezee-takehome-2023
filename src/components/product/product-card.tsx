@@ -22,7 +22,7 @@ type ProductCardProps = {
   currencySymbol?: string;
 };
 
-const ProductCard = ({ id, title, image, uniqueTitle, lowPrice, highPrice, lowPriceOriginal, highPriceOriginal, currencySymbol, vipPriceFlag, bulkDiscountFlag, moq }: ProductCardProps) => {
+const ProductCard = ({ id, title, image, uniqueTitle, lowPrice, highPrice, lowPriceOriginal, highPriceOriginal, currencySymbol, vipPriceFlag, bulkDiscountFlag, moq, lowPricePretty, highPricePretty }: ProductCardProps) => {
   let originalPrice = undefined;
   if (lowPriceOriginal && highPriceOriginal) {
     originalPrice = `${currencySymbol}${lowPriceOriginal.toFixed(2)} - ${currencySymbol}${highPriceOriginal.toFixed(2)}`;
@@ -51,7 +51,7 @@ const ProductCard = ({ id, title, image, uniqueTitle, lowPrice, highPrice, lowPr
       <Card image={image} altText={title} className="h-full" tags={tags}>
         <div className="flex flex-col mt-2 mb-2">
           <span className={`text-slate-500 text-xs line-through ${originalPrice ? "visible" : "invisible"}`}>{originalPrice ? originalPrice : "&nbsp;"}</span>
-          <span className="text-lg text-sky-700 font-bold">$120.00 - $130.00</span>
+          <span className="text-lg text-sky-700 font-bold">{lowPricePretty}{highPricePretty&&(` — ${highPricePretty}`)}</span>
         </div>
         <hr/>
         <span className="mt-2">{title}</span>

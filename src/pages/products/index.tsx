@@ -25,8 +25,12 @@ const Products = () => {
 
   return (
     <Layout>
-      <p>Page 1 of about 10 results</p>
-      <ProductSort sort={sort} setSort={setSort} />
+      <div className="my-3">
+        <p>Page 1 of about 10 results</p>
+      </div>
+      <div className="my-3">
+        <ProductSort sort={sort} setSort={setSort} />
+      </div>
       <div className="grid grid-cols-6 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {data.map((product) => (
           <ProductCard
@@ -35,7 +39,16 @@ const Products = () => {
             title={product.title}
             image={product.images[0].url}
             uniqueTitle={product.uniqTitle}
-            lowPricePretty={product.lowPricePretty}
+            lowPriceOriginal={product.lowPriceOriginal || undefined}
+            highPriceOriginal={product.highPriceOriginal || undefined}
+            lowPrice={product.lowPrice || undefined}
+            highPrice={product.highPrice || undefined}
+            currencySymbol={product.currencySymbol || undefined}
+            moq={product.moq > 1 ? product.moq : undefined}
+            bulkDiscountFlag={product.bulkDiscountFlag}
+            vipPriceFlag={product.vipPriceFlag}
+            lowPricePretty={product.lowPricePretty || undefined}
+            highPricePretty={product.highPricePretty || undefined}
           />
         ))}
       </div>
