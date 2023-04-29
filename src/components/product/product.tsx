@@ -17,7 +17,7 @@ const Product = ({ uniqueTitle }: ProductProps) => {
     <>
       {product && (
         <>
-          <div className="flex">
+          <div className="flex flex-wrap space-x-10 space-y-5">
             <div className="flex-1 bg-white">
               <div className="flex flex-col px-5">
                 <div>
@@ -70,7 +70,7 @@ const Product = ({ uniqueTitle }: ProductProps) => {
               </div>
             </div>
             <div className="flex-1">
-              <div className="flex ml-10">
+              <div className="flex">
                 <ProductAdd price={product.lowPricePretty} />
               </div>
             </div>
