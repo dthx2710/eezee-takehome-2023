@@ -31,7 +31,7 @@ const Products = () => {
       <div className="my-3">
         <ProductSort sort={sort} setSort={setSort} />
       </div>
-      <div className="grid grid-cols-6 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {data.map((product) => (
           <ProductCard
             key={product.id}

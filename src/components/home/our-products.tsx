@@ -7,7 +7,7 @@ import Section from "../layout/section";
 const OurProducts = () => {
   return (
     <Section title="Our Products" subtitle="Trusted by the best companies in Asia" link="products">
-      <div className="grid grid-cols-6 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {productData.slice(0,6).map((product) => (
           <ProductCard
             key={product.id}

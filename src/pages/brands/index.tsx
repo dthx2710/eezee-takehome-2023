@@ -24,7 +24,7 @@ const Brands = () => {
               <div className="mt-10 mb-4">
                 <span className="bg-gray-200 py-2 px-5">{alphabet[index]}</span>
               </div>
-              <div className="grid grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-6 lg:grid-cols-6 gap-4">
                 {brand.map((brand) => (
                   <BrandCard
                     key={brand.id}
